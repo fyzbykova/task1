@@ -1,0 +1,155 @@
+@prefix : <http://www.semanticweb.org/быковаанна/ontologies/2025/9/untitled-ontology-9/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/быковаанна/ontologies/2025/9/untitled-ontology-9/> .
+
+<http://www.semanticweb.org/быковаанна/ontologies/2025/9/untitled-ontology-9> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/быковаанна/ontologies/2025/9/untitled-ontology-9#Берет_в_аренду
+:Берет_в_аренду rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/быковаанна/ontologies/2025/9/untitled-ontology-9#Относится_к_жанру
+:Относится_к_жанру rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/быковаанна/ontologies/2025/9/untitled-ontology-9#Работает_в_библиотеке
+:Работает_в_библиотеке rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/быковаанна/ontologies/2025/9/untitled-ontology-9#Рекомендует
+:Рекомендует rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/быковаанна/ontologies/2025/9/untitled-ontology-9#Библиотекарь
+:Библиотекарь rdf:type owl:Class ;
+              rdfs:subClassOf :Человек .
+
+
+###  http://www.semanticweb.org/быковаанна/ontologies/2025/9/untitled-ontology-9#Жанр
+:Жанр rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/быковаанна/ontologies/2025/9/untitled-ontology-9#Книга
+:Книга rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/быковаанна/ontologies/2025/9/untitled-ontology-9#Человек
+:Человек rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/быковаанна/ontologies/2025/9/untitled-ontology-9#Читатель
+:Читатель rdf:type owl:Class ;
+          rdfs:subClassOf :Человек .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/быковаанна/ontologies/2025/9/untitled-ontology-9#Алексей_Козлов
+:Алексей_Козлов rdf:type owl:NamedIndividual ,
+                         :Человек ,
+                         :Читатель .
+
+
+###  http://www.semanticweb.org/быковаанна/ontologies/2025/9/untitled-ontology-9#Анна_Ивановна
+:Анна_Ивановна rdf:type owl:NamedIndividual ,
+                        :Библиотекарь ,
+                        :Человек ;
+               :Рекомендует :Мастер_и_Маргарита .
+
+
+###  http://www.semanticweb.org/быковаанна/ontologies/2025/9/untitled-ontology-9#Детектив
+:Детектив rdf:type owl:NamedIndividual ,
+                   :Жанр .
+
+
+###  http://www.semanticweb.org/быковаанна/ontologies/2025/9/untitled-ontology-9#Дмитрий_Смирнов
+:Дмитрий_Смирнов rdf:type owl:NamedIndividual ,
+                          :Библиотекарь ,
+                          :Человек .
+
+
+###  http://www.semanticweb.org/быковаанна/ontologies/2025/9/untitled-ontology-9#Иван_Петров
+:Иван_Петров rdf:type owl:NamedIndividual ,
+                      :Человек ,
+                      :Читатель ;
+             :Берет_в_аренду :Мастер_и_Маргарита .
+
+
+###  http://www.semanticweb.org/быковаанна/ontologies/2025/9/untitled-ontology-9#Мария_Сидорова
+:Мария_Сидорова rdf:type owl:NamedIndividual ,
+                         :Человек ,
+                         :Читатель ;
+                :Берет_в_аренду :Преступление_и_наказание .
+
+
+###  http://www.semanticweb.org/быковаанна/ontologies/2025/9/untitled-ontology-9#Мастер_и_Маргарита
+:Мастер_и_Маргарита rdf:type owl:NamedIndividual ,
+                             :Книга ;
+                    :Относится_к_жанру :Роман .
+
+
+###  http://www.semanticweb.org/быковаанна/ontologies/2025/9/untitled-ontology-9#Преступление_и_наказание
+:Преступление_и_наказание rdf:type owl:NamedIndividual ,
+                                   :Книга ;
+                          :Относится_к_жанру :Роман .
+
+
+###  http://www.semanticweb.org/быковаанна/ontologies/2025/9/untitled-ontology-9#Роман
+:Роман rdf:type owl:NamedIndividual ,
+                :Жанр .
+
+
+###  http://www.semanticweb.org/быковаанна/ontologies/2025/9/untitled-ontology-9#Фантастика
+:Фантастика rdf:type owl:NamedIndividual ,
+                     :Жанр .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+:x rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "S1" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Библиотекарь ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Человек ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
